@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const superagent = require("superagent");
 const config = require("../data/config.json");
-const humor = require("../data/bothumor.json");
 
 module.exports = {
   name: "feed",
