@@ -9,7 +9,7 @@ module.exports = {
     if (!user)
       return message.channel.send("You need to mention someone to smack them");
     if (user.id == config.botid)
-      return message.channel.send("I don't have cheeks kiddo");
+      return message.channel.send("I don't have cheeks kiddo :)");
     if (user.id == message.author.id)
       return message.channel.send("You smacked yourself, **lol** :)");
 
