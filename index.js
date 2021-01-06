@@ -53,8 +53,6 @@ client.on("message", (message) => {
     client.commands.get("feed").execute(message);
   } else if (command === "neko") {
     client.commands.get("neko").execute(message);
-  } else if (command === "kiss") {
-    client.commands.get("kiss").execute(message);
   } else if (command === "fight") {
     client.commands.get("fight").execute(message);
   } else if (command === "hammer") {
@@ -65,8 +63,6 @@ client.on("message", (message) => {
     client.commands.get("kitsune").execute(message, args);
   } else if (command === "uptime") {
     client.commands.get("uptime").execute(client, message);
-  } else if (command === "owoify") {
-    client.commands.get("owoify").execute(message, args);
   } else if (command === "coinflip") {
     client.commands.get("coinflip").execute(message);
   } else if (command === "copypasta") {

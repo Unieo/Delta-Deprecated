@@ -10,7 +10,7 @@ module.exports = {
     let licence = "MIT";
     let sourceCode =
       "Click [here](https://github.com/Unieo/Project-Delta) to go to GitHub";
-    let version = "1.1.1 Beta Release";
+    let version = "1.1.1 Official Release";
     const embed = new Discord.MessageEmbed()
       .setTitle("Bot Info")
       .setColor(Math.floor(Math.random() * 16777215))
