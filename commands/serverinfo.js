@@ -10,6 +10,7 @@ function checkDays(date) {
 
 module.exports = {
   name: "serverinfo",
+  aliases: ["si"],
   execute(client, message) {
     let region = {
       brazil: "Brazil",

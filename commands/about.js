@@ -10,10 +10,12 @@ module.exports = {
     let licence = "MIT";
     let sourceCode =
       "Click [here](https://github.com/Unieo/Project-Delta) to go to GitHub";
+    let version = "1.1.1 Beta Release";
     const embed = new Discord.MessageEmbed()
       .setTitle("Bot Info")
       .setColor(Math.floor(Math.random() * 16777215))
       .addField("About:", about)
+      .addField("Version", version)
       .addField("Credit:", credit)
       .addField("Licence:", licence)
       .addField("Source Code:", sourceCode)

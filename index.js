@@ -79,8 +79,8 @@ client.on("message", (message) => {
     client.commands.get("poke").execute(message);
   } else if (command === "roll") {
     client.commands.get("roll").execute(message);
-  } else if (command === "rps") {
-    client.commands.get("rps").execute(message, args);
+  } else if (command === "rockpaperscissor") {
+    client.commands.get("rockpaperscissor").execute(message, args);
   } else if (command === "serverinfo") {
     client.commands.get("serverinfo").execute(client, message);
   } else if (command === "shibe") {

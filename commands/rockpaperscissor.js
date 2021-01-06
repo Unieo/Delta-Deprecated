@@ -4,7 +4,8 @@ function random() {
 }
 
 module.exports = {
-  name: "rps",
+  name: "rockpaperscissor",
+  aliases: ["rps"],
   execute(message, args) {
     let choice = args.join(" ").toLowerCase();
     if (choice === "")

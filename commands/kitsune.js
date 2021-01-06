@@ -4,6 +4,7 @@ const config = require("../data/config.json");
 
 module.exports = {
   name: "kitsune",
+  aliases: ["ks"],
   async execute(message) {
     const { body } = await superagent.get(
       "https://nekos.life/api/v2/img/fox_girl"

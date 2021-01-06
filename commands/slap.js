@@ -5,6 +5,17 @@ const config = require("../data/config.json");
 module.exports = {
   name: "slap",
   async execute(message) {
+    let replies = [
+      "You Serious!",
+      "Im dirty, wash me, then do it, lol",
+      "Wash your hands first, lol",
+      "I will make U pass out if you slap me!",
+      "Im busy, dnd",
+      "Ok just slap gentle, lol",
+      "No, I dont want you to dirty my silver steel face again!",
+      "U think Ima Toy? Well Ima kick ur ass!",
+      "I don't have cheeks kiddo",
+    ];
     let user = message.mentions.users.first();
 
     if (!user)

@@ -3,14 +3,25 @@ const config = require("../data/config.json");
 
 module.exports = {
   name: "hammer",
+  aliases: ["ham"],
   execute(message) {
+    let replies = [
+      "Ima robot, leave me alone :persevere:",
+      "Your Barbecue to fight against me, lol",
+      "Every seen my muscles? No?! I'll show U! U ded now :)",
+      "Wait, Im not ready!",
+      "I dont like violence",
+      "I killed U, ur face be like :zany_face:",
+      "Who do think you are u r, I win lol",
+      "I Forfit, I have other things to do :sweat_smile:",
+    ];
+    let result = Math.floor(Math.random() * replies.length);
     let user = message.mentions.users.first();
     if (!user)
       return message.channel.send(
         "Mention someone to throw the hammer at, **Dummy!**"
       );
-    if (user.id == config.botid)
-      return message.channel.send(`Ima robot, leave me alone :persevere:`);
+    if (user.id == config.botid) return message.channel.send(replies[result]);
     if (user.id == message.author.id)
       return message.channel.send(`*Bruh*, ${user.username} suicided`);
 

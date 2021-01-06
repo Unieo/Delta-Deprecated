@@ -4,13 +4,16 @@ const config = require("../data/config.json");
 
 module.exports = {
   name: "dadjoke",
+  aliases: ["dj"],
   execute(message, args) {
     args = args.join(" ");
 
     const embed = new Discord.MessageEmbed()
-      .setTitle("Here's your Joke")
+      .setTitle("Here's your Dad Joke")
       .setColor(Math.floor(Math.random() * 16777215))
-      .addField(dadjoke[Math.floor(Math.random() * dadjoke.length)])
+      .setDescription(
+        `**${dadjoke[Math.floor(Math.random() * dadjoke.length)]}**`
+      )
       .setTimestamp()
       .setFooter(`${config.copyright}`);
     message.channel.send({ embed });

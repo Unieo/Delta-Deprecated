@@ -3,6 +3,7 @@ const config = require("../data/config.json");
 
 module.exports = {
   name: "avatar",
+  aliases: ["ava"],
   execute(message) {
     let mentions = message.mentions.users;
     let user = mentions.first();

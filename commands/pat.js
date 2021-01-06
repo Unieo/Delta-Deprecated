@@ -5,11 +5,21 @@ const config = require("../data/config.json");
 module.exports = {
   name: "pat",
   async execute(message) {
+    let replies = [
+      "Nope",
+      "Im dirty, wash me, then do it",
+      "Wash your hands first",
+      "No",
+      "Im busy",
+      "Ok just tap gentle",
+      "No, I dont want you to dirty me again!",
+      "U think Ima Toy? Well Ima kick ur ass!",
+    ];
+    let result = Math.floor(Math.random() * replies.length);
     let user = message.mentions.users.first();
 
     if (!user) return message.reply("You need to mention someone to pat them");
-    if (user.id == config.botid)
-      return message.channel.send("No, I dont want you to dirty me again!");
+    if (user.id == config.botid) return message.channel.send(replies[result]);
     if (user.id == message.author.id)
       return message.channel.send(
         "I see you're lonely,... **headpats you** :)"
