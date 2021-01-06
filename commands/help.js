@@ -14,7 +14,7 @@ module.exports = {
       .addField("Games:", help.game)
       .setDescription("**Type `d!about` to get more info on the bot**")
       .setTimestamp()
-      .setFooter(`Delta is made by ${config.ownername} ${config.copyright}`);
+      .setFooter(`Delta is made by ${config.ownername} • ${config.copyright}`);
     message.author.send({ embed }).catch((e) => {
       if (e) {
         message.channel.send(

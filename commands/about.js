@@ -20,7 +20,7 @@ module.exports = {
       .addField("Licence:", licence)
       .addField("Source Code:", sourceCode)
       .setTimestamp()
-      .setFooter(`Delta is made by ${config.ownername} ${config.copyright}`);
+      .setFooter(`Delta is made by ${config.ownername} • ${config.copyright}`);
 
     message.channel.send({ embed });
   },
