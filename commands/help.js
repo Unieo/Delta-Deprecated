@@ -21,8 +21,9 @@ module.exports = {
           `Wait. Your DMs seem to be locked :lock: so I'll send it here instead :wink:`
         );
         message.channel.send({ embed });
+      } else {
+        message.reply("Check your DMs!");
       }
     });
-    message.reply("Check your DMs!");
   },
 };
