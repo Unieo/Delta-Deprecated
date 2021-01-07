@@ -4,7 +4,8 @@ const help = require("../data/help.json");
 
 module.exports = {
   name: "help",
-  execute(message) {
+  cooldown: 5,
+  execute(client, message, args) {
     const embed = new Discord.MessageEmbed()
       .setTitle("Help is here!")
       .setColor(Math.floor(Math.random() * 16777215))

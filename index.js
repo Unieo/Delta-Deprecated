@@ -1,15 +1,17 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-const config = require("./data/config.json");
+const { prefix } = require("./data/config.json");
 
 const fs = require("fs");
 
 client.commands = new Discord.Collection();
+const cooldowns = new Discord.Collection();
 
 const commandFiles = fs
-  .readdirSync("./commands/")
+  .readdirSync("./commands")
   .filter((file) => file.endsWith(".js"));
+
 for (const file of commandFiles) {
   const command = require(`./commands/${file}`);
 
@@ -24,67 +26,48 @@ client.on("ready", () => {
 });
 
 client.on("message", (message) => {
-  if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-  const args = message.content.slice(config.prefix.length).split(/ +/);
-  const command = args.shift().toLowerCase();
+  const args = message.content.slice(prefix.length).trim().split(/ +/);
+  const commandName = args.shift().toLowerCase();
 
-  if (command === "ping") {
-    client.commands.get("ping").execute(client, message);
-  } else if (command === "8ball") {
-    client.commands.get("8ball").execute(message, args);
-  } else if (command === "about") {
-    client.commands.get("about").execute(message);
-  } else if (command === "advise") {
-    client.commands.get("advise").execute(message);
-  } else if (command === "avatar") {
-    client.commands.get("avatar").execute(message);
-  } else if (command === "cat") {
-    client.commands.get("cat").execute(message);
-  } else if (command === "cuddle") {
-    client.commands.get("cuddle").execute(message);
-  } else if (command === "dadjoke") {
-    client.commands.get("dadjoke").execute(message, args);
-  } else if (command === "dog") {
-    client.commands.get("dog").execute(message);
-  } else if (command === "meme") {
-    client.commands.get("meme").execute(message);
-  } else if (command === "feed") {
-    client.commands.get("feed").execute(message);
-  } else if (command === "neko") {
-    client.commands.get("neko").execute(message);
-  } else if (command === "fight") {
-    client.commands.get("fight").execute(message);
-  } else if (command === "hammer") {
-    client.commands.get("hammer").execute(message);
-  } else if (command === "help") {
-    client.commands.get("help").execute(message, args);
-  } else if (command === "kitsune") {
-    client.commands.get("kitsune").execute(message, args);
-  } else if (command === "uptime") {
-    client.commands.get("uptime").execute(client, message);
-  } else if (command === "coinflip") {
-    client.commands.get("coinflip").execute(message);
-  } else if (command === "copypasta") {
-    client.commands.get("copypasta").execute(message, args);
-  } else if (command === "ngif") {
-    client.commands.get("ngif").execute(message);
-  } else if (command === "pat") {
-    client.commands.get("pat").execute(message);
-  } else if (command === "poke") {
-    client.commands.get("poke").execute(message);
-  } else if (command === "roll") {
-    client.commands.get("roll").execute(message);
-  } else if (command === "rockpaperscissor") {
-    client.commands.get("rockpaperscissor").execute(message, args);
-  } else if (command === "serverinfo") {
-    client.commands.get("serverinfo").execute(client, message);
-  } else if (command === "shibe") {
-    client.commands.get("shibe").execute(message);
-  } else if (command === "slap") {
-    client.commands.get("slap").execute(message);
-  } else if (command === "smack") {
-    client.commands.get("smack").execute(message);
+  const command =
+    client.commands.get(commandName) ||
+    client.commands.find(
+      (cmd) => cmd.aliases && cmd.aliases.includes(commandName)
+    );
+
+  if (!command) return;
+
+  if (!cooldowns.has(command.name)) {
+    cooldowns.set(command.name, new Discord.Collection());
+  }
+
+  const now = Date.now();
+  const timestamps = cooldowns.get(command.name);
+  const cooldownAmount = (command.cooldown || 3) * 1000;
+
+  if (timestamps.has(message.author.id)) {
+    const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
+
+    if (now < expirationTime) {
+      const timeLeft = (expirationTime - now) / 1000;
+      return message.reply(
+        `please wait ${timeLeft.toFixed(
+          1
+        )} more second(s) before reusing the \`${command.name}\` command.`
+      );
+    }
+  }
+
+  timestamps.set(message.author.id, now);
+  setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
+
+  try {
+    command.execute(client, message, args);
+  } catch (error) {
+    console.error(error);
+    message.reply("there was an error trying to execute that command!");
   }
 });
 

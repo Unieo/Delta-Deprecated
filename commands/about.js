@@ -3,14 +3,15 @@ const config = require("../data/config.json");
 
 module.exports = {
   name: "about",
-  execute(message) {
+  cooldown: 5,
+  execute(client, message, args) {
     let about = "This bot was made for the purpose of fun and entertainment.";
     let credit =
       "A big thank you to my friend **Lookin** in helping me solve bugs etc.";
     let licence = "MIT";
     let sourceCode =
       "Click [here](https://github.com/Unieo/Project-Delta) to go to GitHub";
-    let version = "1.1.1 Official Release";
+    let version = "1.1.3 Official Release";
     const embed = new Discord.MessageEmbed()
       .setTitle("Bot Info")
       .setColor(Math.floor(Math.random() * 16777215))
