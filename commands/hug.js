@@ -3,13 +3,12 @@ const superagent = require("superagent");
 const config = require("../data/config.json");
 
 module.exports = {
-  name: "cuddle",
-  aliases: ["cud", "hug"],
+  name: "hug",
   cooldown: 5,
   async execute(client, message, args) {
     let replies = [
-      "*Aww!* cuddles you.",
-      "Your Cute, ok I'll cuddle you",
+      "*Aww!* hugs you.",
+      "Your Cute, ok I'll hug you",
       "OK, lol",
       "IDK you, so no",
       "You Serious? Get away!",
@@ -32,7 +31,7 @@ module.exports = {
     );
 
     const embed = new Discord.MessageEmbed()
-      .setTitle(`${message.author.username} cuddled ${user.username} OwO`)
+      .setTitle(`${message.author.username} hugged ${user.username} OwO`)
       .setColor(Math.floor(Math.random() * 16777215))
       .setTimestamp()
       .setImage(body.url)

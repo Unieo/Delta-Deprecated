@@ -1,20 +1,23 @@
 const Discord = require("discord.js");
 const config = require("../data/config.json");
-const { fun, utility, action, game } = require("../data/help.json");
 
 module.exports = {
-  name: "help",
-  cooldown: 20,
+  name: "info",
+  cooldown: 5,
   execute(client, message, args) {
+    let about = "This bot was made for the purpose of fun and entertainment.";
+    let credit =
+      "A big thank you to my friend **Lookin** in helping me solve bugs etc.";
+    let licence = "MIT";
     const embed = new Discord.MessageEmbed()
-      .setTitle("Help is here!")
+      .setTitle("Bot Info")
       .setColor(Math.floor(Math.random() * 16777215))
-      .addField("Fun:", fun)
-      .addField("Utility:", utility)
-      .addField("Actions:", action)
-      .addField("Games:", game)
+      .addField("About:", about)
+      .addField("Credit:", credit)
+      .addField("Licence:", licence)
       .setTimestamp()
       .setFooter(`Delta is made by ${config.ownername} • ${config.copyright}`);
+
     message.channel.send({ embed });
   },
 };

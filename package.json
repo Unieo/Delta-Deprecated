@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "alexflipnote.js": "^2.3.3",
+    "axios": "^0.21.1",
     "discord.js": "^12.5.1",
     "random-puppy": "^1.1.0",
     "snekfetch": "^4.0.4",
