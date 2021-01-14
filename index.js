@@ -1,8 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-
 const { prefix } = require("./data/config.json");
-
+const keepAlive = require("./server.js");
 const fs = require("fs");
 
 client.commands = new Discord.Collection();
@@ -19,7 +18,7 @@ for (const file of commandFiles) {
 }
 
 client.on("ready", () => {
-  console.log(`Delta is Alive!`);
+  console.log(`Bot is online!`);
   client.user.setActivity(`${prefix}help for help!`, {
     type: "PLAYING",
   });
@@ -71,4 +70,5 @@ client.on("message", (message) => {
   }
 });
 
-client.login(process.env.token);
+keepAlive();
+client.login(process.env.DISCORD_BOT_TOKEN);
