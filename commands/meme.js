@@ -4,7 +4,7 @@ const config = require("../data/config.json");
 
 module.exports = {
   name: "meme",
-  cooldown: 5,
+  cooldown: 10,
   execute(client, message, args) {
     let reddit = [
       "meme",

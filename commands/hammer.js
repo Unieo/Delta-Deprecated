@@ -4,7 +4,7 @@ const config = require("../data/config.json");
 module.exports = {
   name: "hammer",
   aliases: ["hmr"],
-  cooldown: 5,
+  cooldown: 20,
   execute(client, message, args) {
     let replies = [
       "Ima robot, leave me alone :persevere:",
@@ -29,8 +29,8 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
       .setTitle("Hammer Time!")
       .setColor(Math.floor(Math.random() * 16777215))
-      .addField(
-        `${message.author.username} threw a hammer at ${user.username}. :hammer:  :eyes: **BAM**, lol`
+      .setDescription(
+        `**${message.author.username} threw a hammer at ${user.username}. :hammer:  :eyes: **BAM**, lol**`
       )
       .setTimestamp()
       .setFooter(`${config.copyright}`);
