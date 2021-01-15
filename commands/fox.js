@@ -6,12 +6,12 @@ module.exports = {
   name: "fox",
   cooldown: 10,
   async execute(client, message, args) {
-    const image = "https://randomfox.ca/floof/";
+    const url = "https://some-random-api.ml/img/fox";
 
-    
+    let response, data;
     try {
       response = await axios.get(url);
-      image = response.data;
+      data = response.data;
     } catch (e) {
       return message.channel.send(`An error occured!`);
     }
@@ -19,7 +19,7 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
       .setColor(Math.floor(Math.random() * 16777215))
       .setTitle("Here's Your Fox")
-      .setImage(image)
+      .setImage(data.link)
       .setTimestamp()
       .setFooter(`${config.copyright}`);
     return message.channel.send({ embed });
