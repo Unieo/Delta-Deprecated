@@ -3,7 +3,7 @@ const got = require("got");
 
 module.exports = {
   name: "meme",
-  cooldown: 10,
+  cooldown: 2,
   async execute(client, message, args) {
     const embed = new Discord.MessageEmbed();
     got("https://www.reddit.com/r/memes/random/.json").then((response) => {
