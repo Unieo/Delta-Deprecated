@@ -2,8 +2,8 @@ const Discord = require('discord.js');
 const got = require('got');
 
 module.exports = {
-	name: 'justintime',
-	aliases: ["jit"],
+	name: 'perfecttiming',
+	aliases: ["pt"],
 	cooldown: 2,
 	async execute(client, message, args) {
 		const embed = new Discord.MessageEmbed();

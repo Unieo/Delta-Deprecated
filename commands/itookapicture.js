@@ -2,7 +2,8 @@ const Discord = require('discord.js');
 const got = require('got');
 
 module.exports = {
-	name: 'itap',
+	name: 'itookapicture',
+	aliases: ["itap"],
 	cooldown: 2,
 	async execute(client, message, args) {
 		const embed = new Discord.MessageEmbed();

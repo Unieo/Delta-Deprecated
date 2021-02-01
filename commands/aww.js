@@ -19,7 +19,9 @@ module.exports = {
 			embed.setImage(memeImage);
 			embed.setColor('RANDOM');
 			embed.setFooter(`👍 ${memeUpvotes} • 💬 ${memeNumComments}`);
-			message.channel.send(embed);
+			message.channel.send(embed).catch(() => {
+				message.channel.send("There was an error!")
+			})
 		});
 	}
 };
