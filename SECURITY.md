@@ -13,4 +13,4 @@ next to it, not :x:.
 ## Reporting a Vulnerability
 
 If you find any vulnerabilities in the project, please email me at unieocorporation@gmail.com
-or just send me a message on twitter.
+or just send me a message on [twitter](https://www.twitter.com/_unieo_).
