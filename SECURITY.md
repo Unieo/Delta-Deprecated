@@ -5,10 +5,10 @@
 Here are a few supported versions, please choose a version with :white_check_mark: 
 next to it, not :x:.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.1.x   | :white_check_mark: |
-| < 1.0   | :x:                |
+| Version                                                       | Supported          |
+| ------------------------------------------------------------- | ------------------ |
+| [1.1.x >](https://github.com/Unieo/Delta/releases/tag/v1.1.1)   | :white_check_mark: |
+| [< 1.0.x](https://github.com/Unieo/Delta/releases/tag/v1.0.0) | :x:                |
 
 ## Reporting a Vulnerability
 
