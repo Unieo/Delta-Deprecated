@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const { prefix, ownername } = require("./config.json");
+const { prefix, ownername, botname } = require("./config.json");
 const keepAlive = require("./server.js");
 const fs = require("fs");
 
@@ -35,7 +35,7 @@ client.on("guildCreate", (guild) => {
     });
     const embed = new Discord.MessageEmbed()
         .setColor(Math.floor(Math.random() * 16777215))
-        .setTitle("Thanks For inviting Delta!")
+        .setTitle(`Thanks For inviting ${botname}!`)
         .setDescription(
             `I hope you enjoy using my commands! Why don't you try \`${prefix}help\` and take a look at my *cool commands*, :smirk:\n\n**Important Links:**\n[Support Server](http://discord.gg/BfwHnRf6bU) - Report Bugs, Request Features, Get Informed of downtime etc.!\n[Invite](https://discord.com/oauth2/authorize?client_id=786882695186874368&scope=bot&permissions=2147483647) - Bot invite link! Invite the bot to your servers...`
         )
