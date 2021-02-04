@@ -12,9 +12,7 @@ module.exports = {
             .setColor(Math.floor(Math.random() * 16777215))
             .setDescription(invite)
             .setTimestamp()
-            .setFooter(
-                `Delta is made by ${config.ownername} • ${config.copyright}`
-            );
+            .setFooter(`${config.copyright}`);
         message.channel.send({ embed });
     },
 };
