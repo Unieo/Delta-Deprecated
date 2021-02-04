@@ -1,4 +1,4 @@
-# Bot Info
+# ![Logo](images/Delta.png) Bot Info
 
 Delta is a simple to use bot. It specialises in Animal and Reddit Commands, making the bot suitable for a young audience.
 
@@ -31,7 +31,11 @@ Ok now we have successfully setup the repo (called repls on repl.it) on repl.it 
 
 Now you simply start the bot using the green **Run** Button and if all goes well the bot should be online!
 
+## Bugs
+
+There is a bug node.js where it doesn't recognise the **got** dependence and so the bot doesnt run, to counter this go to the **Shell** tab on the right of the console, type `npm i got` and after that is done, try running the bot again.
+
 # Note
 
 -   Keep on updating the dependencies using npm.
--   Yes, you need to create and application and bot on you own.
+-   Yes, you need to create an application and a bot on you own.
