@@ -39,7 +39,7 @@ module.exports = {
                 )
                 .setTimestamp()
                 .setFooter(
-                    `Delta is made by ${config.ownername} • ${config.copyright}`
+                    `${config.botname} is made by ${config.ownername} • ${config.copyright}`
                 );
             message.channel.send({ embed });
         } else if (help === "reddit") {
@@ -49,7 +49,7 @@ module.exports = {
                 .addField("Reddit:", helpMsg.reddit)
                 .setTimestamp()
                 .setFooter(
-                    `Delta is made by ${config.ownername} • ${config.copyright}`
+                    `${config.botname} is made by ${config.ownername} • ${config.copyright}`
                 );
             message.channel.send(reddit);
         } else if (help === "utility") {
@@ -59,7 +59,7 @@ module.exports = {
                 .addField("Utility:", helpMsg.utility)
                 .setTimestamp()
                 .setFooter(
-                    `Delta is made by ${config.ownername} • ${config.copyright}`
+                    `${config.botname} is made by ${config.ownername} • ${config.copyright}`
                 );
             message.channel.send(utility);
         } else if (help === "animal") {
@@ -69,7 +69,7 @@ module.exports = {
                 .addField("Animals:", helpMsg.animal)
                 .setTimestamp()
                 .setFooter(
-                    `Delta is made by ${config.ownername} • ${config.copyright}`
+                    `${config.botname} is made by ${config.ownername} • ${config.copyright}`
                 );
             message.channel.send(animal);
         } else if (help === "game") {
@@ -79,7 +79,7 @@ module.exports = {
                 .addField("Games:", helpMsg.game)
                 .setTimestamp()
                 .setFooter(
-                    `Delta is made by ${config.ownername} • ${config.copyright}`
+                    `${config.botname} is made by ${config.ownername} • ${config.copyright}`
                 );
             message.channel.send(game);
         } else if (help === "other") {
