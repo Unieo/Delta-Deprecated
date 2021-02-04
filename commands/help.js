@@ -89,7 +89,7 @@ module.exports = {
                 .addField("Others:", helpMsg.other)
                 .setTimestamp()
                 .setFooter(
-                    `Delta is made by ${config.ownername} • ${config.copyright}`
+                    `${config.botname} is made by ${config.ownername} • ${config.copyright}`
                 );
             message.channel.send(other);
         }
