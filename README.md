@@ -1,4 +1,4 @@
-# ![Logo](images/Delta.png) Bot Info
+# Bot Info
 
 Delta is a simple to use bot. It specialises in Animal and Reddit Commands, making the bot suitable for a young audience.
 
