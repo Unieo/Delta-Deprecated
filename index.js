@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const { prefix, ownername, botname } = require("./config.json");
 const keepAlive = require("./server.js");
 const fs = require("fs");
+const { token } = require("./token.json")
 
 client.commands = new Discord.Collection();
 const cooldowns = new Discord.Collection();
@@ -94,4 +95,4 @@ client.on("message", (message) => {
 });
 
 keepAlive();
-client.login(process.env.DISCORD_BOT_TOKEN);
+client.login(token);
