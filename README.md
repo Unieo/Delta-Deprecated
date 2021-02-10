@@ -17,10 +17,9 @@ There are two very simple ways to run the bot. You can either run it on your loc
 -   [Discord Account](https://discord.com/register)
 
 ### Setup
-
+![screenshot1](images/183820.png)
 1.  Go to Delta's Repo on Github
 2.  Click the **Code** option and then **Download ZIP**
-    ![screenshot1](images/183820.png)
 3.  Once Downloaded, extract the file
 4.  Open the folder in the code editor of your choice
 
