@@ -1,6 +1,35 @@
-## [Unrelease]
+## [1.1.3] - 2021-02-10
 
-Making info.js into a command which shows info on other commands
+### Added
+
+-   images/183820.png
+-   images/184442.png
+-   images/184936.png
+-   images/185032.png
+-   CHANGELOG.md
+-   debug.log
+
+### Modified
+
+-   .gitignore
+-   commands/aww.js
+-   commands/help.js
+-   CHANGELOG.md
+-   CONTRIBUTING.md
+-   README.md
+-   LICENSE
+-   index.js
+
+### Removed
+
+-   images/184442.png
+-   images/Delta.png
+-   .example.env
+
+### Patch Notes
+
+1.  License changed from MIT to MPL-2.0
+2.  Dependencies updated
 
 ## [1.1.2] - 2021-02-04
 
