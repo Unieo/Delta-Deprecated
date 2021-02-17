@@ -1,3 +1,10 @@
+## [1.1.4] - 2021-02-16
+
+## Updated
+
+-   License is updated to MPL-2.0 in package.json
+-   Removed command names `vote`, `source` and `invite` from `-help utility` command
+
 ## [1.1.3] - 2021-02-10
 
 ### Added
